@@ -12,8 +12,8 @@ using namespace System::Data::SqlServerCe;*/
 void main()
 {
 	SqlInstance^ in = gcnew SqlInstance("3000");
-	String^ s = in->GetString("SELECT [ItemNumber] FROM Products");
-	Console::WriteLine(s);
+	//String^ s = in->GetString("SELECT [ItemNumber] FROM Products");
+	//Console::WriteLine(s);
 
 
 
