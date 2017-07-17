@@ -11,7 +11,18 @@ using namespace System::Data::SqlServerCe;*/
 
 void main()
 {
-	SqlInstance^ in = gcnew SqlInstance("3000");
+	while(true)
+	{
+		Console::WriteLine("Enter work order to find: ");
+		String^ s;
+		s = Console::ReadLine();
+
+		SqlInstance^ in = gcnew SqlInstance(s);
+		in->OutputData();
+		delete in;
+		Console::WriteLine("");
+	}
+	//SqlInstance^ in = gcnew SqlInstance("3005");
 	//String^ s = in->GetString("SELECT [ItemNumber] FROM Products");
 	//Console::WriteLine(s);
 

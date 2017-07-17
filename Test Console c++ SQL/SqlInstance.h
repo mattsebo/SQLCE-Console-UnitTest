@@ -3,6 +3,7 @@
 #using <System.Data.dll>
 #using <System.Data.SqlServerCe.dll>
 #include "Product.h"
+#include <fstream>
 
 using namespace System;
 using namespace System::Data;
@@ -15,10 +16,13 @@ public ref class SqlInstance
 public:
 	SqlInstance(String^ workOrderName);
 	void InitProducts(); // get all item numbers from work order
+	void OutputData();
 private:
 	String^ GetString(String^ query);
+private:
 	String^ connString;
-	static String^ pathToWorkOrder = "C:\\Microvellum Data\\Work Orders\\";
+	bool pathExists;
+	static String^ pathToWorkOrder = "Z:\\Microvellum Data\\Work Orders\\";
 	SqlCeConnection^ conn;
-	List<Product^> productList;
+	SortedList<String^, Product^> productList;
 };
